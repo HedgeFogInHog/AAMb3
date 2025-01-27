@@ -1,22 +1,25 @@
 package Models.Registration;
 
-import Entities.User;
+import org.springframework.stereotype.Component;
 
+@Component
 public class RegistrationModel {
 
-    private User user;
-
     /// Check Available username
-    public boolean checkAUsername(username) {
-        if () {
+    public boolean checkAUsername(String username) {
+        username
+
+
+
+
+                
+        if (username) {
 
         }
     }
     /// Check if user password is Secure
-    public boolean checkSUserPassword(password) {
-        if () {
-
-        }
+    public boolean checkSUserPassword(String password) {
+        return password.length() > 8 && password.matches(".*[a-zA-Z].*");
     }
     public void registerUser() {}
 

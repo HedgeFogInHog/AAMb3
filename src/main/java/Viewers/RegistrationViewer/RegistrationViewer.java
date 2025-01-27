@@ -24,5 +24,6 @@ public class RegistrationViewer {
 
     public void showRegistrationError(String message) {
         System.out.println("Error: " + message);
+        System.out.println("Please try again");
     }
 }

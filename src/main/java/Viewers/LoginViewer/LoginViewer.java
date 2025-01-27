@@ -1,4 +1,4 @@
-package Viewers.Login;
+package Viewers.LoginViewer;
 
 public class LoginViewer {
 

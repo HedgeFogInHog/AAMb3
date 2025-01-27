@@ -1,7 +1,7 @@
 package Controllers.LoginController;
 
 import Models.Login.LoginModel;
-import Viewers.Login.LoginViewer;
+import Viewers.LoginViewer.LoginViewer;
 
 
 import java.util.Scanner;

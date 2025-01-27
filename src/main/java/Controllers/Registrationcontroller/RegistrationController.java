@@ -1,18 +1,20 @@
 package Controllers.Registrationcontroller;
 
 import Models.Registration.RegistrationModel;
+import Services.RegistrationService.AuthService;
 import Viewers.RegistrationViewer.RegistrationViewer;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Scanner;
 
+@RestController
 public class RegistrationController {
+    @Autowired
     private RegistrationViewer viewer;
     private RegistrationModel model;
-
-    public RegistrationController(RegistrationViewer viewer, RegistrationModel model) {
-        this.viewer = viewer;
-        this.model = model;
-    }
+    @Autowired
+    private AuthService service;
 
     public void registerUser(Scanner scanner) {
         viewer.showRegistrationPrompt();
@@ -23,10 +25,10 @@ public class RegistrationController {
         viewer.showRegistrationPromptPass();
         String password = scanner.nextLine();
 
-        if (model.checkAUsername(username)||model.checkSUserPassword(password)) {
-            viewer.showRegistrationSuccess(username);
+        if (model.checkAUsername(username)||model.checkSUserPassword(password)) {   ///  A - available, S - Secure
+            viewer.showRegistrationSuccess();
         } else {
-            viewer.showRegistrationError("Error. Please try again.");
+            viewer.showRegistrationError("Incorrect username or password");
         }
     }
 
